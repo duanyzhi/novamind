@@ -4,10 +4,10 @@
 namespace novamind {
 
 enum class DataType {
-  kINT = 0,
-  kFLOAT = 1,
-  kBOOL = 2,
-  kNULL = 3,
+  kINT = 0,  // int
+  kFLOAT = 1,  // float
+  kBOOL = 2,  // bool
+  kNULL = 3,  // nullptr
 };
 
 }  // namespace novamind
