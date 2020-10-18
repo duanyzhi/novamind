@@ -23,10 +23,12 @@ class BaseTensor {
 
 class Tensor : public BaseTensor {
  public:
-   Tensor(std::vector<int> size, novamind::DataType datatype) : 
-       sizes(size), data_type(datatype) { };
+   Tensor(std::vector<int> size, novamind::DataType datatype); 
+   //sizes(size), data_type(datatype);
+   ~Tensor();
    std::string type;
    novamind::DataType get_datatype();
+   void* data_ptr;
  private:
   std::vector<int> sizes;
   novamind::DataType data_type;

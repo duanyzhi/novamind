@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "libs/math.h"
+#include "libs/Tensor.h"
 
 namespace novamind {
 namespace math {
@@ -12,5 +13,10 @@ int BaseMathOp::getNum() {
   return num;
 }
 
+//core::Tensor randn(std::vector<int> size, novamind::DataType type) {
+//  novamind::core::Tensor randn_tensor(size, type);
+//  return randn_tensor;
+//}
+//
 }  // namespace math
 }  // namespace novamind

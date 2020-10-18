@@ -12,6 +12,7 @@ MemoryAllocator::~MemoryAllocator() { destructors(); };
 
 // implement of destructors
 void MemoryAllocator::destructors() {
+  std::cout << "this is malloc destructors" << std::endl;
   while (!ptr_set.empty()) {
     auto iter_ptr = ptr_set.begin();
     deallocate<void>(*iter_ptr);
