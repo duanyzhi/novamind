@@ -22,7 +22,6 @@ inline float* randn(float* data_ptr, int numel, float start_num=0.0, float end_n
   for (int i = 0; i < numel; i++) {
     auto random = (float) rand() / (float)RAND_MAX;
     float gen_num = random * diff + start_num;
-    //printf("test %f ", gen_num);
     data_ptr[i] = static_cast<float>(gen_num);
   }
   return data_ptr;

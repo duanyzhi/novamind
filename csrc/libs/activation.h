@@ -3,6 +3,10 @@
 
 #include <iostream>
 
+#include "libs/Tensor.h"
+#include "libs/memory_allocator.h"
+#include "libs/print.h"
+
 namespace novamind {
 namespace operation {
 
@@ -13,7 +17,7 @@ class Activation {
   //~Activation();
 
   // act function
-  void relu();
+  novamind::core::Tensor relu(novamind::core::Tensor tensor);
  private:
   std::string op_name;
 };

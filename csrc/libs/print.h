@@ -6,6 +6,7 @@
 
 #include "libs/type.h"
 
+// template must be in *.h
 template<class T>
 inline void print(std::string str, T num) {
   std::cout << str << num << std::endl;
@@ -17,9 +18,9 @@ inline void print(std::string str) {
 
 template<class T>
 inline void print(std::string str,
-           std::vector<T> vec,
-           int start_index = 0,
-           int end_index = 1) {
+                  std::vector<T> vec,
+                  int start_index = 0,
+                  int end_index = 1) {
   assert(end_index <= vec.size() && "end index must be less than vector size"); 
   std::cout << "===========================" << std::endl;
   std::cout << str << std::endl;

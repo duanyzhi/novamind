@@ -1,16 +1,19 @@
 #include "libs/activation.h"
-#include "libs/memory_allocator.h"
 
 namespace novamind {
 namespace operation {
 
-void Activation::relu() {
-  std::cout << "---------  relu  ----------" << std::endl; 
-  float* relu_data = allocateGlobalBuffer<float>(10);
-  relu_data[0] = 1.0;
-  relu_data[1] = 2.0;
-  relu_data[9] = 9.0;
-  std::cout << "relu data:" << relu_data[9] << std::endl;
+novamind::core::Tensor Activation::relu(novamind::core::Tensor tensor) {
+  auto data = static_cast<float*>(tensor.data_ptr);
+  float* relu_out_data = novamind::allocateGlobalBuffer<float>(tensor.numel);
+  for (int i = 0; i < tensor.numel; i++) {
+    relu_out_data[i] = data[i] < 0 ? -1 * data[i] : data[i];
+  }
+
+  novamind::core::Tensor relu_out_tensor(tensor.sizes,
+                                         tensor.get_datatype(),
+                                         relu_out_data);
+  return relu_out_tensor;
 }
 
 }  // namespace operation

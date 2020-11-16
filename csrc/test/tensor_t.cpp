@@ -2,7 +2,7 @@
 #include <vector>
 
 #include "libs/Tensor.h"
-#include "libs/utils.h"
+#include "libs/novamind.h"
 
 int main() {
   std::vector<int> sizes = {2, 2};

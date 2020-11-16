@@ -1,1 +1,3 @@
-#include "libs/print.h"
+#pragma once
+
+int GetVecNumel(std::vector<int> size_vec);
