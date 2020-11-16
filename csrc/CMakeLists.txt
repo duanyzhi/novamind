@@ -16,6 +16,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")   # show all waring
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 
-file(GLOB SOURCES "test/tensor_t.cpp", "core/*.cpp", "utils/*.cpp", "operators/*.cpp")  # add all cpp file
+file(GLOB SOURCES "test/relu_t.cpp", "core/*.cpp", "utils/*.cpp", "operators/*.cpp")  # add all cpp file
 
 add_executable(main ${SOURCES}) 

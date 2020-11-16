@@ -1,10 +1,6 @@
 #include <iostream>
 
-#include "libs/Tensor.h"
-#include "libs/memory_allocator.h"
-#include "libs/utils.h"
-#include "libs/math.h"
-
+#include "libs/Tensor.h"  // all *.h should write in Tensor.h
 
 namespace novamind {
 namespace core {
@@ -16,21 +12,19 @@ novamind::DataType novamind::core::Tensor::get_datatype() {
 Tensor::Tensor(std::vector<int> size, novamind::DataType datatype) :
   sizes(size), data_type(datatype)
 {
-  int numel = 1;
-  for (int i = 0; i < size.size(); i++) {
-    numel = numel * size[i];
-  }
+  numel = GetVecNumel(size);
   switch(datatype) {
     case novamind::DataType::kFLOAT:
       {
         auto data = memory::allocateMemory<float>(numel);
-        float* data_randn = novamind::math::randn(data, numel);
-        data_ptr = (void*)data_randn;
+        data_ptr = novamind::math::randn(data, numel, -1, 1);
+        // data_ptr = (void*)data_randn;
         break;
       }
     case novamind::DataType::kINT:
       {
-        data_ptr = (void*)memory::allocateMemory<int>(numel);
+        data_ptr = (float*)memory::allocateMemory<int>(numel);
+        std::cout << "INT TYPE should be covert." << std::endl;
         break;
       }
     default:
@@ -43,6 +37,17 @@ Tensor::Tensor(std::vector<int> size, novamind::DataType datatype) :
 Tensor::~Tensor() {
   memory::freeMemory<void>(data_ptr);
 }
+
+// TODO(owner): add update data ptr
+// void novamind::core::Tensor::update_data_ptr(float* new_data_ptr) {
+//   // float* float_raw_data = memory::allocateMemory<float>(numel);
+//   for (int i = 0; i < numel; i++) {
+//     print("new:", new_data_ptr[i]);
+//     data_ptr[i] = new_data_ptr[i];
+//     print("aha:", data_ptr[i]);
+//   }
+//   // data_ptr = float_raw_data;
+// }
 
 }  // namespace core
 }  // namespace novamind
