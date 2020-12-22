@@ -3,9 +3,8 @@
 #include "libs/Tensor.h"  // all *.h should write in Tensor.h
 
 namespace novamind {
-namespace core {
 
-novamind::DataType novamind::core::Tensor::get_datatype() {
+novamind::DataType novamind::Tensor::get_datatype() {
   return data_type;
 }
 
@@ -49,5 +48,4 @@ Tensor::~Tensor() {
 //   // data_ptr = float_raw_data;
 // }
 
-}  // namespace core
 }  // namespace novamind

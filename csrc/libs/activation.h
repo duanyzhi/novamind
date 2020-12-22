@@ -10,17 +10,7 @@
 namespace novamind {
 namespace operation {
 
-class Activation {
- public:
-  // default constructor
-  //Activation();
-  //~Activation();
-
-  // act function
-  novamind::core::Tensor relu(novamind::core::Tensor tensor);
- private:
-  std::string op_name;
-};
+novamind::Tensor relu(novamind::Tensor tensor);
 
 }  // namespace operation
 }  // namespace novamind
