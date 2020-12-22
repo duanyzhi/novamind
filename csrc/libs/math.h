@@ -29,4 +29,5 @@ inline float* randn(float* data_ptr, int numel, float start_num=0.0, float end_n
 
 }  // namespace math
 }  // namespace novamind
+
 #endif  // NOVAMIND_CSRC_MATH_H_

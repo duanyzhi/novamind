@@ -11,7 +11,6 @@
 #include "libs/math.h"
 
 namespace novamind {
-namespace core {
 
 class BaseTensor {
  public:
@@ -41,6 +40,5 @@ class Tensor : public BaseTensor {
   novamind::DataType data_type;
 };
 
-}  // namespace core
 }  // namespace novamind
 #endif  // NOVAMIND_CSRC_CORE_TENSOR_H_
