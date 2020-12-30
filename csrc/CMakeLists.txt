@@ -18,4 +18,11 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 
 file(GLOB SOURCES "test/relu_t.cpp", "core/*.cpp", "utils/*.cpp", "operators/*.cpp")  # add all cpp file
 
-add_executable(main ${SOURCES}) 
+## for c++ test
+#add_executable(main ${SOURCES}) 
+
+
+## for python test
+#pybind11_add_module(novamind core/python_methods.cpp)
+#target_compile_definitions(cmake_example PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
+

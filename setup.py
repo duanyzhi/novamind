@@ -1,8 +1,16 @@
 import setuptools
 import sys
-sys.path.append('/home/dyz/.local/lib/python3.5/site-packages/')
 with open("README.md", "r") as fh:
     long_description = fh.read()
+
+from pybind11.setup_helpers import Pybind11Extension
+
+ext_modules = [
+    Pybind11Extension(
+        "python_example",
+        sorted(glob("src/*.cpp")),  # Sort source files for reproducibility
+    ),
+]
 
 setuptools.setup(
     name="novamind",
